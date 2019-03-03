@@ -26,15 +26,30 @@
             <th>Známka</th>
         </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>prvni sloupec</td>
-                <td>druhy sloupec</td>
-            </tr>
+             <tbody>
+
+        <?php
+
+        $pocetZnamek = 0;
+        $soucetZnamek = 0;
+        foreach ($predmety as $predmet => $znamka) {
+                    echo "<tr>
+                <td>$predmet</td>
+                <td>$znamka</td>
+            </tr>";
+            $pocetZnamek++;
+            $soucetZnamek += $znamka;
+            }
+            
+
+        ?>
         </tbody>
     </table>
 
     Průměr:
+    <?php
+    echo $soucetZnamek / $pocetZnamek;
+    ?>
 
 </div>
 </body>
